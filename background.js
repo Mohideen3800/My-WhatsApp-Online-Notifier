@@ -1,3 +1,5 @@
+// background.js
+
 // Select the audio element that plays the notification sound
 const audioElement = document.createElement('audio');
 audioElement.src = 'notification.mp3';
