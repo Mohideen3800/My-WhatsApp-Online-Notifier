@@ -1,10 +1,36 @@
 <!-- popup.html -->
-<button id="start-tracking">Start tracking</button>
+<div id="select-contact">
+  <label for="phone-number">Phone number:</label>
+  <input type="text" id="phone-number" />
+  <button id="start-tracking">Start tracking</button>
+</div>
+<div id="stop-tracking" style="display: none;">
+  <p>Tracking contact: <span id="tracked-contact"></span></p>
+  <button id="stop">Stop tracking</button>
+</div>
 
 <!-- Add some styles to improve the UI/UX -->
 <style>
+  label,
+  input {
+    display: block;
+    margin-bottom: 10px;
+  }
+  input {
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+  }
   button {
     margin: 20px;
     font-size: 18px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+  }
+  #select-contact {
+    display: flex;
+    flex-direction: column;
   }
 </style>
