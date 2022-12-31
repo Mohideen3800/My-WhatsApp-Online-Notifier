@@ -14,6 +14,14 @@ const observer = new MutationObserver(mutations => {
       // Play a notification sound
       const audio = new Audio('notification.mp3');
       audio.play();
+
+      // Send a notification
+      chrome.notifications.create({
+        type: 'basic',
+        iconUrl: 'icon.png',
+        title: `${selectedContact} is online`,
+        message: 'Your selected contact has come online on WhatsApp.'
+      });
     });
   }
 });
