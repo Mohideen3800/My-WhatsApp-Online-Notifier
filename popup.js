@@ -1,19 +1,11 @@
 // popup.js
 
-// Display the selected contact when it's updated
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.type === 'update_selected_contact') {
-    const selectedContactDiv = document.querySelector('#selected-contact');
-    selectedContactDiv.innerHTML = `Selected contact: ${request.contact}`;
-  }
-});
+const startTrackingButton = document.querySelector('#start-tracking');
 
-// Get the phone number of the selected contact from storage
-chrome.storage.sync.get(['contact'], result => {
-  const selectedContact = result.contact;
-  if (selectedContact) {
-    // Display the selected contact
-    const selectedContactDiv = document.querySelector('#selected-contact');
-    selectedContactDiv.innerHTML = `Selected contact: ${selectedContact}`;
-  }
+startTrackingButton.addEventListener('click', () => {
+  // Get the phone number of the selected contact from the page
+  const selectedContact = document.querySelector('._3CNEp._1f1zm').title;
+
+  // Save the selected contact to storage
+  chrome.storage.sync.set({ contact: selectedContact });
 });
