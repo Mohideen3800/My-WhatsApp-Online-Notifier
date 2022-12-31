@@ -14,9 +14,6 @@ const observer = new MutationObserver(mutations => {
       // Play a notification sound
       const audio = new Audio('notification.mp3');
       audio.play();
-
-      // Send a message to the popup window to update the selected contact
-      chrome.runtime.sendMessage({ type: 'update_selected_contact', contact: selectedContact });
     });
   }
 });
