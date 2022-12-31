@@ -15,9 +15,8 @@ const observer = new MutationObserver(mutations => {
       const audio = new Audio('notification.mp3');
       audio.play();
 
-      // Add an entry to the activity log
-      const log = document.querySelector('#activity-log');
-      log.innerHTML += `<p>${selectedContact} came online at ${new Date()}</p>`;
+      // Send a message to the popup window to update the selected contact
+      chrome.runtime.sendMessage({ type: 'update_selected_contact', contact: selectedContact });
     });
   }
 });
