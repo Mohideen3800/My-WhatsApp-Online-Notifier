@@ -4,3 +4,45 @@
   <input type="text" name="contact" id="contact">
   <button type="submit">Save</button>
 </form>
+
+<!-- Display the selected contact and a button to view the activity log -->
+<div id="selected-contact"></div>
+<button id="view-activity-log" disabled>View activity log</button>
+
+<!-- Add some styles to improve the UI/UX -->
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  label {
+    margin-bottom: 10px;
+  }
+  input {
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+  button {
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0077cc;
+    color: #fff;
+    cursor: pointer;
+  }
+  #selected-contact {
+    margin: 20px;
+    font-size: 18px;
+  }
+  #view-activity-log {
+    margin: 20px;
+  }
+</style>
