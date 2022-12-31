@@ -13,4 +13,3 @@ form.addEventListener('submit', event => {
   chrome.storage.sync.set({ contact }, () => {
     console.log(`Saved contact: ${contact}`);
   });
-});
