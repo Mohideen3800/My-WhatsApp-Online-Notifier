@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "My WhatsApp Online Notifier",
+  "description": "Plays a sound when a contact comes online in WhatsApp Web",
+  "version": "1.0",
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
