@@ -3,10 +3,16 @@
 // Wait for the contacts list to be added to the DOM
 const waitForContacts = () => {
   return new Promise((resolve, reject) => {
+    let timeout = setTimeout(() => {
+      clearInterval(interval);
+      reject(new Error('Timed out waiting for contacts list'));
+    }, 5000); // Set the timeout to 5 seconds
+
     const interval = setInterval(() => {
       const contacts = document.querySelectorAll('.pane-header');
       if (contacts.length > 0) {
         clearInterval(interval);
+        clearTimeout(timeout);
         resolve(contacts);
       }
     }, 100);
