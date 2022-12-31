@@ -1,11 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "My WhatsApp Online Notifier",
-  "description": "Plays a sound when a specific contact comes online in WhatsApp Web",
+  "name": "WhatsApp Online Tracker",
+  "description": "Tracks the online activity of a specific WhatsApp contact and provides notifications",
   "version": "1.0",
   "permissions": [
     "activeTab",
-    "storage"
+    "storage",
+    "notifications"
   ],
   "content_scripts": [
     {
