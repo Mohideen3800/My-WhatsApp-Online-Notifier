@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "My WhatsApp Online Notifier",
-  "description": "Plays a sound and displays the selected contact in the popup window when they come online in WhatsApp Web",
+  "description": "Plays a sound when a specific contact comes online in WhatsApp Web",
   "version": "1.0",
   "permissions": [
     "activeTab",
