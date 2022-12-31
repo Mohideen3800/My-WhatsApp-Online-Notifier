@@ -1,17 +1,20 @@
+<!-- popup.html -->
+
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    /* Add some styling for your UI */
-  </style>
+  <title>WhatsApp Online Tracker</title>
 </head>
 <body>
-  <!-- Add a dropdown menu for selecting a contact -->
-  <select id="contact-select">
-    <!-- Add options for each of the user's contacts -->
-  </select>
-  <!-- Add a button for stopping tracking -->
-  <button id="stop-tracking-button">Stop Tracking</button>
+  <h1>WhatsApp Online Tracker</h1>
+  <p>Enter a contact's phone number and country code to receive notifications when they are online on WhatsApp:</p>
+  <form>
+    <label for="phone-number">Phone number:</label><br>
+    <input type="text" id="phone-number" name="phone-number"><br>
+    <label for="country-code">Country code:</label><br>
+    <input type="text" id="country-code" name="country-code"><br>
+    <button id="submit-button" type="submit">Track contact</button>
+  </form>
   <script src="popup.js"></script>
 </body>
 </html>
