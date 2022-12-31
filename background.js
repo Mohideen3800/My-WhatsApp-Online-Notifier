@@ -7,10 +7,16 @@ audioElement.src = 'notification.mp3';
 // Wait for the online status element to be added to the DOM
 const waitForElement = selector => {
   return new Promise((resolve, reject) => {
+    let timeout = setTimeout(() => {
+      clearInterval(interval);
+      reject(new Error(`Timed out waiting for element: ${selector}`));
+    }, 5000); // Set the timeout to 5 seconds
+
     const interval = setInterval(() => {
       const element = document.querySelector(selector);
       if (element) {
         clearInterval(interval);
+        clearTimeout(timeout);
         resolve(element);
       }
     }, 100);
