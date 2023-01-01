@@ -6,6 +6,7 @@
   "permissions": [
     "webview",
     "notifications",
+    "storage",
     "https://web.whatsapp.com/*"
   ],
   "background": {
