@@ -1,18 +1,11 @@
-// manifest.json
-
 {
   "manifest_version": 2,
-  "name": "WhatsApp Online Tracker",
+  "name": "Online Status Tracker",
   "version": "1.0",
-  "permissions": [
-    "webRequest",
-    "notifications"
-  ],
-  "background": {
-    "scripts": ["background.js"]
-  },
-  "browser_action": {
-    "default_popup": "popup.html",
-    "default_icon": "icon.png"
-  }
+  "description": "Tracks the online status of a specific contact on WhatsApp Web and sends a browser notification when they are online",
+  "permissions": ["notifications"],
+  "content_scripts": [{
+    "matches": ["*://web.whatsapp.com/*"],
+    "js": ["content.js"]
+  }]
 }
