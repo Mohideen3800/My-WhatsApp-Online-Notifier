@@ -1,10 +1,9 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "WhatsApp Online Notifier",
   "description": "Receive push notifications when your contacts are online in WhatsApp",
   "version": "1.0.0",
   "permissions": [
-    "webview",
     "notifications",
     "storage",
     "https://web.whatsapp.com/*"
@@ -15,13 +14,12 @@
   "content_scripts": [
     {
       "matches": ["https://web.whatsapp.com/*"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "run_at": "document_end"
     }
   ],
   "browser_action": {
-    "default_popup": "popup.html"
-  },
-  "icons": {
-    "128": "icon128.png"
+    "default_popup": "popup.html",
+    "default_icon": "icon128.png"
   }
 }
