@@ -1,7 +1,3 @@
-below is error
-'browser_action' requires manifest version of 2 or lower.
-
-below is code, rewritez
 {
   "manifest_version": 3,
   "name": "WhatsApp Online Notifier",
@@ -22,7 +18,7 @@ below is code, rewritez
       "run_at": "document_end"
     }
   ],
-  "browser_action": {
+  "browser_extension": {
     "default_popup": "popup.html",
     "default_icon": "icon128.png"
   }
