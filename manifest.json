@@ -1,11 +1,26 @@
 {
   "manifest_version": 2,
-  "name": "Online Status Tracker",
-  "version": "1.0",
-  "description": "Tracks the online status of a specific contact on WhatsApp Web and sends a browser notification when they are online",
-  "permissions": ["notifications"],
-  "content_scripts": [{
-    "matches": ["*://web.whatsapp.com/*"],
-    "js": ["content.js"]
-  }]
+  "name": "WhatsApp Online Notifier",
+  "description": "Receive push notifications when your contacts are online in WhatsApp",
+  "version": "1.0.0",
+  "permissions": [
+    "webview",
+    "notifications",
+    "https://web.whatsapp.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "128": "icon128.png"
+  }
 }
